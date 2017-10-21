@@ -12,6 +12,7 @@
 // 导入跳转的页面
 #import "TestController.h"
 #import "DemoApp-Swift.h"
+#import "TableViewController.h"
 
 
 // 导入AppDelegate，获取UINavigationController
@@ -31,8 +32,9 @@ RCT_EXPORT_METHOD(RNOpenOneVC:(NSString *)msg){
     //TestController *one = [[TestController alloc]init];
     
     //swift界面
-    SwiftController *one = [[SwiftController alloc]init];
-    
+    //SwiftController *one = [[SwiftController alloc]init];
+    TableViewController *one = [[TableViewController alloc]init];
+
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     [app.nav pushViewController:one animated:YES];

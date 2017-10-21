@@ -394,6 +394,7 @@
 		FF6DD8481F9AF68E00446872 /* YiRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshFooter.m; sourceTree = "<group>"; };
 		FF6DD8491F9AF68E00446872 /* YiRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiRefreshHeader.h; sourceTree = "<group>"; };
 		FF6DD84A1F9AF68E00446872 /* YiRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshHeader.m; sourceTree = "<group>"; };
+		FF6DD8721F9B15DE00446872 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = DemoApp/Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,6 +537,7 @@
 		13B07FAE1A68108700A75B9A /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				FF6DD8721F9B15DE00446872 /* Header.h */,
 				FF6DD8451F9AF68E00446872 /* 3rdLibs */,
 				FF6DD7E91F9AF39300446872 /* Main.storyboard */,
 				FF6DD7801F99995300446872 /* RN2Native */,
@@ -1728,6 +1730,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = DemoApp/Header.h;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1761,6 +1764,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_PREFIX_HEADER = DemoApp/Header.h;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
