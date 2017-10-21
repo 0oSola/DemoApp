@@ -4,7 +4,7 @@
 
 # Xcode
 #
-ios/build/
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -22,33 +22,30 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
-# Android/IntelliJ
+# Android/IJ
 #
-android/app/build/
-android/build/
-.idea
-.gradle/*
-local.properties
 *.iml
+.idea
+.gradle
+local.properties
 
 # node.js
 #
 node_modules/
 npm-debug.log
-yarn-error.log
 
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
+android/app/libs
+android/keystores/debug.keystore
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
+.vscode
+tsconfig.json
+drawable-*
+*.bundle
+*.bundle.meta
 
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
+# template
+App/Constants/LocalHost.js
+*.bat
