@@ -1,5 +1,5 @@
 'use strict';
-import React, { Component } from 'react';
+import React, { Component,PureComponent } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -41,12 +41,12 @@ class Home extends Component {
     super(props);
   
     this.state = {
-      selected: (new Map(): Map<string, boolean>)
+
     };
 
   }
 
-  _keyExtractor = (item, index) => item.id;
+  _keyExtractor = (item, index) => index;
 
   componentDidMount() {
     this.props.actions.fetch();
@@ -57,7 +57,6 @@ class Home extends Component {
     return (
       <MyListItem
         id={item.name}
-        selected={!!this.state.selected.get(item.id)}
         title={item.name}
       />
     )
@@ -78,7 +77,6 @@ class Home extends Component {
         </TouchableOpacity>
         <FlatList
           data={this.props.home.data.main}
-          extraData={this.state}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderItem}
         />
@@ -92,7 +90,7 @@ class HomeList extends Component{
 
 }
 
-class MyListItem extends Component {
+class MyListItem extends PureComponent {
   _onPress = () => {
     alert(this.props.id);
   };
