@@ -31,13 +31,13 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
+  
   //self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
 
   _nav = [[UINavigationController alloc]initWithRootViewController:rootViewController];
-  
+  _nav.navigationBar.hidden = YES;   //启动RN时隐藏原生navigation
   self.window.rootViewController = _nav;
-  
   return YES;
 }
 

@@ -28,6 +28,19 @@
 
 @implementation TableViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  self.navigationController.navigationBar.hidden = NO;   //启动原生时开启原生navigation
+  
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+  [super viewWillDisappear:animated];
+  self.navigationController.navigationBar.hidden = YES; //关闭原生时关闭原生navigation
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
