@@ -9,22 +9,22 @@ export function fetch() {
       .then(result => {
         dispatch(finishFetchHome(result));
       });
-  }
+  };
 }
 
 function beginFetchHome() {
   return {
     type: Types.BEGIN_FETCH_HOME,
-  }
+  };
 }
 
 function finishFetchHome(result) {
-  var data = null;
+  let data = null;
   if(result){
-    var data = result.data;
+    let data = result.data;
   }
   return {
     type: Types.FINISH_FETCH_HOME,
     data: data
-  }
+  };
 }

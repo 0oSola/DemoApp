@@ -6,14 +6,14 @@ import Home from '../Containers/Home/Home';
 import Detail from '../Containers/Detail/Detail';
 
 const Navigation = StackNavigator({
-	Splash: { 
-  	screen: Splash,
+  Splash: {
+    screen: Splash,
   },
-  Home: { 
-  	screen: Home,
+  Home: {
+    screen: Home,
   },
-  Detail:{
-  	screen:Detail,
+  Detail: {
+    screen: Detail,
   }
 });
 

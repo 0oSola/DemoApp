@@ -49,3 +49,4 @@ drawable-*
 # template
 App/Constants/LocalHost.js
 *.bat
+yarn-error.log

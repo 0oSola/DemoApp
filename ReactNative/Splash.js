@@ -29,14 +29,14 @@ export default class Splash extends Component {
 
   componentDidMount() {
     const { navigate } = this.props.navigation;
-    navigate('Home')
+    navigate('Home');
   }
 
 
 
   render() {
     return (
-      <View></View>);
+      <View />);
   }
 }
 

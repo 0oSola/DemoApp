@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <Provider store = {storeInstance}>
         <View style={{flex:1,backgroundColor:'black'}}>
-          <StatusBar barStyle='dark-content' 
-            animated={true}/>
+          <StatusBar barStyle="dark-content" 
+            animated/>
           <Navigation />
         </View>
       </Provider>

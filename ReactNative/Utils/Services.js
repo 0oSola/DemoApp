@@ -27,5 +27,5 @@ export function getHomeList(){
 function mockResult(result) {
   return new Promise((resolve,reject)=>{
     resolve({code:0,data:result});
-  })
+  });
 }

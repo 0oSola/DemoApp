@@ -1,11 +1,11 @@
 'use strict';
 import {combineReducers} from 'redux';
 import home from './Home/HomeReducers';
-
+import {AsyncStorage} from 'react-native';
 
 const appReducer = combineReducers({
   home
-})
+});
 
 
 const rootReducer = (state, action) => {
@@ -14,8 +14,8 @@ const rootReducer = (state, action) => {
     AsyncStorage.setItem('token','');
   }
 
-  return appReducer(state, action)
-}
+  return appReducer(state, action);
+};
 
 
 export default rootReducer;

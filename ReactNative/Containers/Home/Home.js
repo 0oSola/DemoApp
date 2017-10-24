@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
-  //Button,
+  Button,
   FlatList,
   TouchableOpacity,
   Dimensions,
@@ -17,8 +17,18 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as homeActions from '../../Actions/Home/HomeAction';
 
-
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.props.actions.fetch();
+  }
+
+  _keyExtractor = (item, index) => index;
 
   //{ navigation }
   static navigationOptions = () => {
@@ -38,21 +48,9 @@ class Home extends Component {
     });
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  _keyExtractor = (item, index) => index;
-
-  componentDidMount() {
-    this.props.actions.fetch();
-  }
-
   _renderItem = ({item}) => {
     return (
-      <MyListItem
+      <ListItem
         id={item.name}
         title={item.name}
       />
@@ -60,13 +58,13 @@ class Home extends Component {
   };
 
   render() {
-    //const { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        {/*<Button
+        <Button
           onPress={() => navigate('Detail')}
           title="Detail>>"
-        />*/}
+        />
         <TouchableOpacity onPress={this.GotoNative}>
           <Text style={styles.welcome}>
             跳转到原生
@@ -84,7 +82,8 @@ class Home extends Component {
 }
 
 
-class MyListItem extends PureComponent {
+class ListItem extends PureComponent {
+
   _onPress = () => {
     //alert(this.props.id);
   };

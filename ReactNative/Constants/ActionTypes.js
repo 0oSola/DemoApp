@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-var keyMirror = require('keymirror');
+let keyMirror = require('keymirror');
 
 module.exports = keyMirror({
-	BEGIN_FETCH_HOME:null,
-	FINISH_FETCH_HOME:null,
+  BEGIN_FETCH_HOME:null,
+  FINISH_FETCH_HOME:null,
 });
