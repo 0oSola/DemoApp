@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
+  //Button,
   FlatList,
   TouchableOpacity,
   Dimensions,
@@ -20,10 +20,11 @@ import * as homeActions from '../../Actions/Home/HomeAction';
 
 class Home extends Component {
 
-  static navigationOptions = ({ navigation }) => {
+  //{ navigation }
+  static navigationOptions = () => {
     return ({
-      title: `Home`,
-    })
+      title: 'Home'
+    });
   };
 
   GotoNative=()=>{
@@ -39,11 +40,8 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-  
     this.state = {
-
     };
-
   }
 
   _keyExtractor = (item, index) => index;
@@ -52,18 +50,17 @@ class Home extends Component {
     this.props.actions.fetch();
   }
 
-
   _renderItem = ({item}) => {
     return (
       <MyListItem
         id={item.name}
         title={item.name}
       />
-    )
+    );
   };
 
   render() {
-    const { navigate } = this.props.navigation;
+    //const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         {/*<Button
@@ -86,13 +83,10 @@ class Home extends Component {
   }
 }
 
-class HomeList extends Component{
-
-}
 
 class MyListItem extends PureComponent {
   _onPress = () => {
-    alert(this.props.id);
+    //alert(this.props.id);
   };
 
   render() {
@@ -103,7 +97,7 @@ class MyListItem extends PureComponent {
           <Text>{this.props.title}</Text>
         </View>
       </TouchableOpacity>
-    )
+    );
   }
 }
 
@@ -134,7 +128,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(homeActions, dispatch)
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React,{Component} from 'react';
 import {Provider} from 'react-redux';
@@ -10,23 +10,22 @@ const storeInstance = store();
 
 class App extends Component {
 
-    constructor(props){
-      super(props);
-      this.state = {
-      }
-    }
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
 
   render() {
     return (
       <Provider store = {storeInstance}>
         <View style={{flex:1,backgroundColor:'black'}}>
-          <StatusBar barStyle='dark-content'
-           animated={true}/>
+          <StatusBar barStyle='dark-content' 
+            animated={true}/>
           <Navigation />
         </View>
       </Provider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

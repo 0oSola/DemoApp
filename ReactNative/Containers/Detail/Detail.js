@@ -1,19 +1,16 @@
 'use strict';
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
 export default class Details extends Component {
 
   static navigationOptions = {
-      title: 'Details',
+    title: 'Details',
   };
 
   componentWillUnmount() {
