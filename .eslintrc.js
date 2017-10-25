@@ -15,6 +15,10 @@ module.exports = {
   "plugins": [
     "react"
   ],
+  "globals": {
+    "__DEV__": true,
+    "fetch": true
+  },
   "rules": {
     "strict": 0,
     "indent": [

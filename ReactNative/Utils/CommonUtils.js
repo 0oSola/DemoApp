@@ -10,7 +10,6 @@ export const DesignHeight = 1334;
 export const PxScale = DesignWidth / DeviceWidth;
 export const PxScaleY = DesignHeight / DeviceHeight;
 
-// eslint-disable-next-line
 if (!__DEV__) {
   global.console = {
     info: () => {},
