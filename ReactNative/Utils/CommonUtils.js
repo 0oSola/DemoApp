@@ -10,6 +10,7 @@ export const DesignHeight = 1334;
 export const PxScale = DesignWidth / DeviceWidth;
 export const PxScaleY = DesignHeight / DeviceHeight;
 
+
 if (!__DEV__) {
   global.console = {
     info: () => {},
@@ -21,6 +22,7 @@ if (!__DEV__) {
 }
 
 
+//判空
 export function isEmptyObject(obj) {
   for (let name in obj) {
     return false;
@@ -28,6 +30,7 @@ export function isEmptyObject(obj) {
   return true;
 }
 
+//根据条件render
 export function RenderIf(flag) {
   return function (viewContent) {
     return flag ? viewContent : null;
@@ -75,4 +78,6 @@ export function formatNumber(num, cent, isThousand) {
     return (((sign) ? '' : '-') + num);
 }
 
+
+//是否是dev环境
 export const IsDev = true;

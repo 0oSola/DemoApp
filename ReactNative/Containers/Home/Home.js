@@ -3,25 +3,28 @@ import React, { Component,PureComponent } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   View,
   Button,
   FlatList,
-  TouchableOpacity,
   Dimensions,
   NativeModules,
   InteractionManager,
 } from 'react-native';
 
+import Text from './../../CommonComponent/TextWrapper';
+import TouchableOpacity from './../../CommonComponent/TouchableOpacity';
+
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {Map} from 'immutable';
 import * as homeActions from '../../Actions/Home/HomeAction';
 
-class Home extends Component {
+class Home extends PureComponent {
 
   constructor(props) {
     super(props);
     this.state = {};
+    this.navigate = props.navigation.navigate;
   }
 
   componentDidMount() {
@@ -57,25 +60,34 @@ class Home extends Component {
     );
   };
 
+  _onPress = ()=>{
+    this.navigate('Detail');
+  }
+
   render() {
-    const { navigate } = this.props.navigation;
+    const data = this.props.home.get('data');
+    let main = this.props.home.getIn(['data','main']);
+    let listView = null;
+
+    if(main){
+      listView = <FlatList
+        data={main.toJS()}
+        keyExtractor={this._keyExtractor}
+        renderItem={this._renderItem}
+      />;
+    }
     return (
       <View style={styles.container}>
         <Button
-          onPress={() => navigate('Detail')}
+          onPress={this._onPress}
           title="Detail>>"
         />
-        <TouchableOpacity onPress={this.GotoNative}>
+        {/*<TouchableOpacity onPress={this.GotoNative}>
           <Text style={styles.welcome}>
             跳转到原生
           </Text>
-        </TouchableOpacity>
-        <FlatList
-          data={this.props.home.data.main}
-          keyExtractor={this._keyExtractor}
-          renderItem={this._renderItem}
-        />
-
+        </TouchableOpacity>*/}
+        {listView}
       </View>
     );
   }
@@ -120,7 +132,7 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state) {
-  const {home} = state;
+  const {home} = state.toObject();
   return { home };
 }
 

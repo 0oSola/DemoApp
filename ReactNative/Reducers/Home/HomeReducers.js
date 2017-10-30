@@ -1,23 +1,18 @@
 'user strict';
-
+import Immutable from 'immutable';
 import * as types from '../../Constants/ActionTypes';
 
-const initialState = {
+const initialState = Immutable.fromJS({
   loading : false,
-  data : {}
-};
+  data : null
+});
 
 export default function handleFetchHome(state = initialState, action) {
   switch (action.type) {
   case types.BEGIN_FETCH_HOME:
-    return Object.assign({}, state, {
-      loading: true
-    });
+    return state.set('loading', true);
   case types.FINISH_FETCH_HOME:
-    return Object.assign({}, state, {
-      loading: false,
-      data: action.data
-    });
+    return state.set('data',action.data).set('loading', true);
   default:
     return state;
   }

@@ -1,5 +1,6 @@
 'use strict';
-import {combineReducers} from 'redux';
+//import {combineReducers} from 'redux';
+import {combineReducers} from 'redux-immutable';
 import home from './Home/HomeReducers';
 import {AsyncStorage} from 'react-native';
 

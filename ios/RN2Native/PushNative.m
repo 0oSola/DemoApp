@@ -35,6 +35,7 @@ RCT_EXPORT_METHOD(RNOpenOneVC:(NSString *)msg){
     //SwiftController *one = [[SwiftController alloc]init];
     
     TableViewController *one = [[TableViewController alloc]init];
+    
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [app.nav pushViewController:one animated:YES];
 
